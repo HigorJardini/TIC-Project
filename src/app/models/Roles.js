@@ -20,7 +20,7 @@ class tb_roles extends Model {
 
 	static associate(models){
 
-		this.belongsToMany(models.tb_petshops_administration, { through: tb_roles });
+		this.belongsTo(models.tb_roles, { through: tb_roles });
 
 	}
 

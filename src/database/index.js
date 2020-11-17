@@ -1,19 +1,31 @@
 import Sequelize from 'sequelize';
 
-import LogCorreiosModel from '../app/models/LogCorreios';
-import Precificacao from '../app/models/Precificacao';
-import Estados from '../app/models/Estados';
-import Cidades from '../app/models/Cidades';
-import Servicos from '../app/models/Servicos';
+import Address 					from '../app/models/Address';
+import Breeds  					from '../app/models/Breeds';
+import Cities 					from '../app/models/Cities';
+import Pets 					from '../app/models/Pets';
+import Petshops 				from '../app/models/Petshops';
+import PetshopsAdministration 	from '../app/models/PetshopsAdministration';
+import Phones 					from '../app/models/Phones';
+import Roles 					from '../app/models/Roles';
+import Schedulings 				from '../app/models/Schedulings';
+import Ufs 						from '../app/models/Ufs';
+import Users 					from '../app/models/Users';
 
 import databaseConfig from '../config/database';
 
 const models = [
-				LogCorreiosModel, 
-				Precificacao, 
-				Estados, 
-				Cidades,
-				Servicos
+				Address,
+				Breeds,
+				Cities,
+				Pets,
+				Petshops,
+				PetshopsAdministration,
+				Phones,
+				Roles,
+				Schedulings,
+				Ufs,
+				Users
 			];
 
 class Database {

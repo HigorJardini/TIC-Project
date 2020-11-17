@@ -1,12 +1,12 @@
-import Users from '../models/Users';
+import Cities from '../models/Cities';
 import { Op } from 'sequelize';
 
-class UsersRepository {
+class CitiesRepository {
 
-    async findOne(id) {
+    async index(id) {
 
-        const user = await 
-                        Users.findOne({ where: { id: id }})
+        const cities = await 
+                        Cities.findOne({ where: { id: id }})
                             .then(success => {
                                 return success;
                             })
@@ -14,13 +14,13 @@ class UsersRepository {
                                 return false;
                             });
 
-        return user; 
+        return cities; 
 
     }
 
     async create(req) {
 
-        const user = await Users.create(req)
+        const cities = await Cities.create(req)
                                 .then(success => {
                                     return success;
                                 })
@@ -28,13 +28,13 @@ class UsersRepository {
                                     return error;
                                 });
 
-        return user;
+        return cities;
 
     }
 
     async update(id, req) {
 
-        const user = await Users.update({
+        const cities = await Cities.update({
             ...req
         },
         { 
@@ -42,14 +42,14 @@ class UsersRepository {
         }
         );  
 
-        return user;
+        return cities;
 
     }
 
     async destroy(id) {
         
         const reply = await 
-                            Users.destroy({ where: { id: id }})
+                            Cities.destroy({ where: { id: id }})
                                 .then(success => {
                                     if(success === 1)
                                         return true;  
@@ -66,4 +66,4 @@ class UsersRepository {
 
 }
 
-export default new UsersRepository();
+export default new CitiesRepository();

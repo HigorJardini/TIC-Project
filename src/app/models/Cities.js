@@ -25,4 +25,4 @@ class tb_cities extends Model {
 
 }
 
-export default tb_breeds;
+export default tb_cities;

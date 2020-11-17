@@ -10,6 +10,7 @@ import PhonesController             from './app/controllers/PhonesController';
 import RolesController              from './app/controllers/RolesController';
 import SchedulingsController        from './app/controllers/SchedulingsController';
 import UfsController                from './app/controllers/UfsController';
+import UsersController                from './app/controllers/UsersController';
 
 const routes = new Router();
 

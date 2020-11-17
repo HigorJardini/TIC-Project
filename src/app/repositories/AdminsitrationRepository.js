@@ -1,12 +1,12 @@
-import Users from '../models/Users';
+import PetshopsAdministration from '../models/PetshopsAdministration';
 import { Op } from 'sequelize';
 
-class UsersRepository {
+class AdminsitrationRepository {
 
-    async findOne(id) {
+    async index(id) {
 
-        const user = await 
-                        Users.findOne({ where: { id: id }})
+        const administration = await 
+                        PetshopsAdministration.findOne({ where: { id: id }})
                             .then(success => {
                                 return success;
                             })
@@ -14,13 +14,13 @@ class UsersRepository {
                                 return false;
                             });
 
-        return user; 
+        return administration; 
 
     }
 
     async create(req) {
 
-        const user = await Users.create(req)
+        const administration = await PetshopsAdministration.create(req)
                                 .then(success => {
                                     return success;
                                 })
@@ -28,13 +28,13 @@ class UsersRepository {
                                     return error;
                                 });
 
-        return user;
+        return administration;
 
     }
 
     async update(id, req) {
 
-        const user = await Users.update({
+        const administration = await PetshopsAdministration.update({
             ...req
         },
         { 
@@ -42,14 +42,14 @@ class UsersRepository {
         }
         );  
 
-        return user;
+        return administration;
 
     }
 
     async destroy(id) {
         
         const reply = await 
-                            Users.destroy({ where: { id: id }})
+                            PetshopsAdministration.destroy({ where: { id: id }})
                                 .then(success => {
                                     if(success === 1)
                                         return true;  
@@ -66,4 +66,4 @@ class UsersRepository {
 
 }
 
-export default new UsersRepository();
+export default new AdminsitrationRepository();

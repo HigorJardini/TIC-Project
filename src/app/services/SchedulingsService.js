@@ -1,4 +1,4 @@
-import UsersRepository from '../repositories/UsersRepository';
+import SchedulingsRepository from '../repositories/SchedulingsRepository';
 
 class SchedulingsService {
 

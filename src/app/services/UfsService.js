@@ -1,10 +1,10 @@
-import UsersRepository from '../repositories/UsersRepository';
+import UfsRepository from '../repositories/UfsRepository';
 
 class UfsService {
 
     async index(req) {
 
-        const create = await UsersRepository
+        const create = await UfsRepository
                                     .FindOne(req.body)
                                         .then(success => {
 
@@ -33,7 +33,7 @@ class UfsService {
 
     async create(req) {
 
-        const create = await UsersRepository
+        const create = await UfsRepository
                                     .create(req.body)
                                         .then(success => {
 
@@ -62,7 +62,7 @@ class UfsService {
 
     async update(req) {
 
-        const update = await UsersRepository.findOne(req.params.id, req)
+        const update = await UfsRepository.findOne(req.params.id, req)
                         .then(async success => {
                             if (!success === false) {
                                 
@@ -87,7 +87,7 @@ class UfsService {
 
     async destroy(req) {
         
-        const destroy = await UsersRepository
+        const destroy = await UfsRepository
                             .destroy(req.params.id)
                                 .then(success => {
                                     if (success === true) {

@@ -1,4 +1,4 @@
-import UsersRepository from '../repositories/UsersRepository';
+import CitiesRepository from '../repositories/CitiesRepository';
 
 class CitiesService {
 

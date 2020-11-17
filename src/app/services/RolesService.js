@@ -1,4 +1,4 @@
-import UsersRepository from '../repositories/UsersRepository';
+import RolesRepository from '../repositories/RolesRepository';
 
 class RolesService {
 

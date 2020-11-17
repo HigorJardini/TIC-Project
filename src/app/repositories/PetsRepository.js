@@ -1,12 +1,12 @@
-import Users from '../models/Users';
+import Pets from '../models/Pets';
 import { Op } from 'sequelize';
 
-class UsersRepository {
+class PetsRepository {
 
-    async findOne(id) {
+    async index(id) {
 
-        const user = await 
-                        Users.findOne({ where: { id: id }})
+        const pet = await 
+                        Pets.findOne({ where: { id: id }})
                             .then(success => {
                                 return success;
                             })
@@ -14,13 +14,13 @@ class UsersRepository {
                                 return false;
                             });
 
-        return user; 
+        return pet; 
 
     }
 
     async create(req) {
 
-        const user = await Users.create(req)
+        const pet = await Pets.create(req)
                                 .then(success => {
                                     return success;
                                 })
@@ -28,13 +28,13 @@ class UsersRepository {
                                     return error;
                                 });
 
-        return user;
+        return pet;
 
     }
 
     async update(id, req) {
 
-        const user = await Users.update({
+        const pet = await Pets.update({
             ...req
         },
         { 
@@ -42,14 +42,14 @@ class UsersRepository {
         }
         );  
 
-        return user;
+        return pet;
 
     }
 
     async destroy(id) {
         
         const reply = await 
-                            Users.destroy({ where: { id: id }})
+                            Pets.destroy({ where: { id: id }})
                                 .then(success => {
                                     if(success === 1)
                                         return true;  
@@ -66,4 +66,4 @@ class UsersRepository {
 
 }
 
-export default new UsersRepository();
+export default new PetsRepository();

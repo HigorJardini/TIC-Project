@@ -1,12 +1,12 @@
-import Users from '../models/Users';
+import Schedulings from '../models/Schedulings';
 import { Op } from 'sequelize';
 
-class UsersRepository {
+class SchedulingsRepository {
 
-    async findOne(id) {
+    async index(id) {
 
-        const user = await 
-                        Users.findOne({ where: { id: id }})
+        const scheduling = await 
+                        Schedulings.findOne({ where: { id: id }})
                             .then(success => {
                                 return success;
                             })
@@ -14,13 +14,13 @@ class UsersRepository {
                                 return false;
                             });
 
-        return user; 
+        return scheduling; 
 
     }
 
     async create(req) {
 
-        const user = await Users.create(req)
+        const scheduling = await Schedulings.create(req)
                                 .then(success => {
                                     return success;
                                 })
@@ -28,13 +28,13 @@ class UsersRepository {
                                     return error;
                                 });
 
-        return user;
+        return scheduling;
 
     }
 
     async update(id, req) {
 
-        const user = await Users.update({
+        const scheduling = await Schedulings.update({
             ...req
         },
         { 
@@ -42,14 +42,14 @@ class UsersRepository {
         }
         );  
 
-        return user;
+        return scheduling;
 
     }
 
     async destroy(id) {
         
         const reply = await 
-                            Users.destroy({ where: { id: id }})
+                            Schedulings.destroy({ where: { id: id }})
                                 .then(success => {
                                     if(success === 1)
                                         return true;  
@@ -66,4 +66,4 @@ class UsersRepository {
 
 }
 
-export default new UsersRepository();
+export default new SchedulingsRepository();
