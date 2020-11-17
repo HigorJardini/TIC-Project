@@ -1,10 +1,10 @@
-import UsersService from '../services/UsersService';
+import PhonesService from '../services/PhonesService';
 
-class UsersController {
+class PhonesController {
 
     async index(req, res) {
 
-        const index = await UsersService.index(req);
+        const index = await PhonesService.index(req);
 
         return res.json({
             index
@@ -14,7 +14,7 @@ class UsersController {
 
     async create(req, res) {
 
-        const create = await UsersService.create(req);
+        const create = await PhonesService.create(req);
 
         return res.json({
             create
@@ -24,7 +24,7 @@ class UsersController {
 
     async update(req, res) {
 
-        const update = await UsersService.update(req);
+        const update = await PhonesService.update(req);
 
         return res.json({
             update
@@ -34,7 +34,7 @@ class UsersController {
 
     async destroy(req, res) {
 
-        const destroy = await UsersService.destroy(req);
+        const destroy = await PhonesService.destroy(req);
 
         return res.json({
             destroy
@@ -44,4 +44,4 @@ class UsersController {
 
 }
 
-export default new UsersController();
+export default new PhonesController();

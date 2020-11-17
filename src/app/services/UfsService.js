@@ -1,17 +1,17 @@
 import UsersRepository from '../repositories/UsersRepository';
 
-class UsersService {
+class UfsService {
 
     async index(req) {
 
-        const index = await UsersRepository
+        const create = await UsersRepository
                                     .FindOne(req.body)
                                         .then(success => {
 
                                             if (!success === false) {
 
                                                 return {
-                                                    message:"Usuário criado com sucesso", 
+                                                    message:"UF criado com sucesso", 
                                                     boolean: true,
                                                     success
                                                 }
@@ -19,7 +19,7 @@ class UsersService {
                                             } else {
                 
                                                 return {
-                                                            message:"Não foi possivel criar o Usuário",
+                                                            message:"Não foi possivel criar o UF",
                                                             boolean: false,
                                                         }
                                         
@@ -40,7 +40,7 @@ class UsersService {
                                             if (!success === false) {
 
                                                 return {
-                                                    message:"Usuário criado com sucesso", 
+                                                    message:"UF criado com sucesso", 
                                                     boolean: true,
                                                     success
                                                 }
@@ -48,7 +48,7 @@ class UsersService {
                                             } else {
                 
                                                 return {
-                                                            message:"Não foi possivel criar o usuário",
+                                                            message:"Não foi possivel criar o UF",
                                                             boolean: false,
                                                         }
                                         
@@ -67,14 +67,14 @@ class UsersService {
                             if (!success === false) {
                                 
                                 return {
-                                    message : 'Usuário atualizado com sucesso',
+                                    message : 'UF atualizado com sucesso',
                                     boolean:  true
                                 }
 
                             } else {
 
                                 return {
-                                            message : 'Usuário não encontrado',
+                                            message : 'UF não encontrado',
                                             boolean : false
                                         }
                         
@@ -93,14 +93,14 @@ class UsersService {
                                     if (success === true) {
 
                                         return {
-                                                    message:"Usuário deletado com sucesso", 
+                                                    message:"UF deletado com sucesso", 
                                                     boolean: true
                                                 }
 
                                     } else {
 
                                         return {
-                                                    message:"Usuário não encontrado",
+                                                    message:"UF não encontrado",
                                                     boolean: false
                                                 }
                                 
@@ -113,4 +113,4 @@ class UsersService {
 
 }
 
-export default new UsersService();
+export default new UfsService();

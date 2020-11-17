@@ -1,6 +1,6 @@
 import UsersRepository from '../repositories/UsersRepository';
 
-class UsersService {
+class CitiesService {
 
     async index(req) {
 
@@ -11,7 +11,7 @@ class UsersService {
                                             if (!success === false) {
 
                                                 return {
-                                                    message:"Usuário criado com sucesso", 
+                                                    message:"Telefone criado com sucesso", 
                                                     boolean: true,
                                                     success
                                                 }
@@ -19,7 +19,7 @@ class UsersService {
                                             } else {
                 
                                                 return {
-                                                            message:"Não foi possivel criar o Usuário",
+                                                            message:"Não foi possivel criar o Telefone",
                                                             boolean: false,
                                                         }
                                         
@@ -40,7 +40,7 @@ class UsersService {
                                             if (!success === false) {
 
                                                 return {
-                                                    message:"Usuário criado com sucesso", 
+                                                    message:"Cidade criado com sucesso", 
                                                     boolean: true,
                                                     success
                                                 }
@@ -48,7 +48,7 @@ class UsersService {
                                             } else {
                 
                                                 return {
-                                                            message:"Não foi possivel criar o usuário",
+                                                            message:"Não foi possivel criar o Cidade",
                                                             boolean: false,
                                                         }
                                         
@@ -67,14 +67,14 @@ class UsersService {
                             if (!success === false) {
                                 
                                 return {
-                                    message : 'Usuário atualizado com sucesso',
+                                    message : 'Cidade atualizado com sucesso',
                                     boolean:  true
                                 }
 
                             } else {
 
                                 return {
-                                            message : 'Usuário não encontrado',
+                                            message : 'Cidade não encontrado',
                                             boolean : false
                                         }
                         
@@ -93,14 +93,14 @@ class UsersService {
                                     if (success === true) {
 
                                         return {
-                                                    message:"Usuário deletado com sucesso", 
+                                                    message:"Cidade deletado com sucesso", 
                                                     boolean: true
                                                 }
 
                                     } else {
 
                                         return {
-                                                    message:"Usuário não encontrado",
+                                                    message:"Cidade não encontrado",
                                                     boolean: false
                                                 }
                                 
@@ -113,4 +113,4 @@ class UsersService {
 
 }
 
-export default new UsersService();
+export default new CitiesService();

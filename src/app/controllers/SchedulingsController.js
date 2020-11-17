@@ -1,10 +1,10 @@
-import UsersService from '../services/UsersService';
+import SchedulingsService from '../services/SchedulingsService';
 
-class UsersController {
+class SchedulingsController {
 
     async index(req, res) {
 
-        const index = await UsersService.index(req);
+        const index = await SchedulingsService.index(req);
 
         return res.json({
             index
@@ -14,7 +14,7 @@ class UsersController {
 
     async create(req, res) {
 
-        const create = await UsersService.create(req);
+        const create = await SchedulingsService.create(req);
 
         return res.json({
             create
@@ -24,7 +24,7 @@ class UsersController {
 
     async update(req, res) {
 
-        const update = await UsersService.update(req);
+        const update = await SchedulingsService.update(req);
 
         return res.json({
             update
@@ -34,7 +34,7 @@ class UsersController {
 
     async destroy(req, res) {
 
-        const destroy = await UsersService.destroy(req);
+        const destroy = await SchedulingsService.destroy(req);
 
         return res.json({
             destroy
@@ -44,4 +44,4 @@ class UsersController {
 
 }
 
-export default new UsersController();
+export default new SchedulingsController();
